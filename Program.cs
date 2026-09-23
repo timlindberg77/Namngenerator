@@ -4,30 +4,17 @@
     {
         static void Main(string[] args)
         {
-            //Uppgift 3 – Pizzakalkylatorn
-            //Du ska räkna ut priset på pizzor med moms.
+            //Du ska simulera ett tärningskast.
             //Instruktioner:
-            //Skapa en const som heter MOMS och sätt den till 0.12(12 %).
-            const double MOMS = 0.12;
-            //Be användaren skriva in antal pizzor.
-            Console.WriteLine("Ange antal pizzor: ");
-            int antalPizzor = int.Parse(Console.ReadLine());
-            //Be användaren skriva in pris per pizza.
-            Console.WriteLine("Ange pris per pizza: ");
-            double prisPerPizza = double.Parse(Console.ReadLine());
-            //Räkna ut:
-            //Totalsumma utan moms
-            String totalsummaUtanMoms = (antalPizzor * prisPerPizza).ToString();
-            Console.WriteLine("Totalsumma utan moms: " + totalsummaUtanMoms);
-            //Momsbelopp
-            String momsbelopp = (antalPizzor * prisPerPizza * MOMS).ToString();
-            Console.WriteLine("Momsbelopp: " + momsbelopp);
-            //Totalsumma med moms
-            String totalsummaMedMoms = (antalPizzor * prisPerPizza + double.Parse(momsbelopp)).ToString();
-            Console.WriteLine("Totalsumma med moms: " + totalsummaMedMoms);
-            //Skriv ut alla tre resultaten på skärmen.
-            //Tips:
-            //Använd Convert.ToInt32() eller Convert.ToDouble() för att konvertera input.
+            //Använd klassen Random(inbyggd i C#) för att skapa ett slumptal mellan 1 och 6.
+            Random Rnd = new Random();
+            int tarning = Rnd.Next(1, 7); //Genererar ett slumptal mellan 1 och 6.
+            //Skriv ut resultatet på skärmen.
+            //Extra: Låt programmet kasta två tärningar och skriv ut summan.
+            Console.WriteLine($"Tärning 1: {tarning}");
+            int tarning2 = Rnd.Next(1, 7);
+            Console.WriteLine($"Tärning 2: {tarning2}");
+            Console.WriteLine($"Summa: {tarning + tarning2}");
 
         }
     }
